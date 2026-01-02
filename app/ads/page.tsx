@@ -3,8 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowRight, Target, BarChart3, Check } from "lucide-react"
-
-const ogImage = "/og-image.png"
+import { getUrl, ogImage } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Ad Creation",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
     title: "Ad Creation | PodLab",
     description:
       "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
-    url: "https://podlab.com/ads",
+    url: getUrl("/ads"),
     images: [
       {
         url: ogImage,

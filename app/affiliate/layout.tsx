@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import type { ReactNode } from "react"
-
-const ogImage = "/og-image.png"
+import { getUrl, ogImage } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Affiliate Program",
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Affiliate Program | PodLab",
     description: "Earn 20% commission by referring founders to PodLab. Simple program with recurring revenue.",
-    url: "https://podlab.com/affiliate",
+    url: getUrl("/affiliate"),
     images: [
       {
         url: ogImage,

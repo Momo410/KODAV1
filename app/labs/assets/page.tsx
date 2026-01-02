@@ -3,8 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, MessageSquare, User, Target, Lightbulb, Check, FileText } from "lucide-react"
 import type { Metadata } from "next"
-
-const ogImage = "/og-image.png"
+import { getUrl, ogImage } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "AssetsLab",
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AssetsLab | PodLab",
     description: "Messaging, avatar, and positioning foundations that guide your content and offers.",
-    url: "https://podlab.com/labs/assets",
+    url: getUrl("/labs/assets"),
     images: [
       {
         url: ogImage,

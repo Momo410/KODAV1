@@ -10,8 +10,7 @@ import { DifferenceSection } from "@/components/home/difference-section"
 import { FounderStorySection } from "@/components/home/founder-story-section"
 import { FinalCTASection } from "@/components/home/final-cta-section"
 import type { Metadata } from "next"
-
-const ogImage = "/og-image.png"
+import { getUrl, ogImage } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio in Las Vegas. Transform your expertise into evergreen content that builds trust and drives sales 24/7.",
-    url: "https://podlab.com",
+    url: getUrl("/"),
     images: [
       {
         url: ogImage,

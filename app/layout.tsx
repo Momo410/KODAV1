@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter, Michroma } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { getUrl, ogImage, siteUrl } from "@/lib/metadata"
 import "./globals.css"
 
 const _inter = Inter({ subsets: ["latin"] })
@@ -33,21 +34,21 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://podlab.com"),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://podlab.com",
+    url: getUrl("/"),
     siteName: "PodLab",
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio. Transform your expertise into evergreen content that sells.",
     images: [
       {
-        url: "/og-image.png",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: "PodLab - Broadcasting Solutions",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio. Transform your expertise into evergreen content that sells.",
-    images: ["/og-image.png"],
+    images: [ogImage],
     creator: "@podlab",
   },
   robots: {
