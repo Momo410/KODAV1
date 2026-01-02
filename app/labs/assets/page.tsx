@@ -2,6 +2,34 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, MessageSquare, User, Target, Lightbulb, Check, FileText } from "lucide-react"
+import type { Metadata } from "next"
+
+const ogImage = "/og-image.png"
+
+export const metadata: Metadata = {
+  title: "AssetsLab",
+  description: "Messaging, avatar, and positioning foundations that guide your content and offers.",
+  openGraph: {
+    title: "AssetsLab | PodLab",
+    description: "Messaging, avatar, and positioning foundations that guide your content and offers.",
+    url: "https://podlab.com/labs/assets",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "PodLab - Broadcasting Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AssetsLab | PodLab",
+    description: "Messaging, avatar, and positioning foundations that guide your content and offers.",
+    images: [ogImage],
+    creator: "@podlab",
+  },
+}
 
 const pillars = [
   {

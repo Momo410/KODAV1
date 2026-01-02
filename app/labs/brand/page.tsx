@@ -2,6 +2,34 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Palette, Check, Type, Droplet, Layers, FileImage } from "lucide-react"
+import type { Metadata } from "next"
+
+const ogImage = "/og-image.png"
+
+export const metadata: Metadata = {
+  title: "BrandLab",
+  description: "Visual identity systems that include logo, color, typography, and brand guidelines.",
+  openGraph: {
+    title: "BrandLab | PodLab",
+    description: "Visual identity systems that include logo, color, typography, and brand guidelines.",
+    url: "https://podlab.com/labs/brand",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "PodLab - Broadcasting Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BrandLab | PodLab",
+    description: "Visual identity systems that include logo, color, typography, and brand guidelines.",
+    images: [ogImage],
+    creator: "@podlab",
+  },
+}
 
 const deliverables = [
   { icon: Layers, title: "Logo Design", description: "A professional logo that represents your brand." },

@@ -185,7 +185,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <p className="text-sm text-muted-foreground">hello@podlab.studio</p>
+                      <p className="text-sm text-muted-foreground">info@podlablv.com</p>
                     </div>
                   </div>
 

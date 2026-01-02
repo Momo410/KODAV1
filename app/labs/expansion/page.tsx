@@ -2,6 +2,34 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, TrendingUp, Check, BarChart3, Target, Megaphone, Users } from "lucide-react"
+import type { Metadata } from "next"
+
+const ogImage = "/og-image.png"
+
+export const metadata: Metadata = {
+  title: "ExpansionLab",
+  description: "Fractional CMO support, campaign management, and growth strategy for scaling founders.",
+  openGraph: {
+    title: "ExpansionLab | PodLab",
+    description: "Fractional CMO support, campaign management, and growth strategy for scaling founders.",
+    url: "https://podlab.com/labs/expansion",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "PodLab - Broadcasting Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ExpansionLab | PodLab",
+    description: "Fractional CMO support, campaign management, and growth strategy for scaling founders.",
+    images: [ogImage],
+    creator: "@podlab",
+  },
+}
 
 const services = [
   {

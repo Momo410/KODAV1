@@ -2,6 +2,34 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Globe, Check, Smartphone, Zap, Search, BarChart3 } from "lucide-react"
+import type { Metadata } from "next"
+
+const ogImage = "/og-image.png"
+
+export const metadata: Metadata = {
+  title: "SiteLab",
+  description: "Conversion-focused website design built to turn visitors into leads and clients.",
+  openGraph: {
+    title: "SiteLab | PodLab",
+    description: "Conversion-focused website design built to turn visitors into leads and clients.",
+    url: "https://podlab.com/labs/site",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "PodLab - Broadcasting Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SiteLab | PodLab",
+    description: "Conversion-focused website design built to turn visitors into leads and clients.",
+    images: [ogImage],
+    creator: "@podlab",
+  },
+}
 
 const features = [
   { icon: Smartphone, title: "Mobile-First Design", description: "Ensure your website looks great on all devices." },
@@ -89,7 +117,7 @@ export default function SiteLabPage() {
               Complete Package
             </div>
             <h3 className="h3 text-foreground">SiteLab</h3>
-            <p className="text-4xl font-bold text-primary mt-4">$7,500</p>
+            <p className="text-4xl font-bold text-primary mt-4">$5,000</p>
             <p className="text-muted-foreground mt-4 max-w-md mx-auto">
               A custom website built to convert visitors into clients, 24/7.
             </p>

@@ -1,7 +1,38 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
+import type { Metadata } from "next"
 import { ArrowRight, Target, BarChart3, Check } from "lucide-react"
+
+const ogImage = "/og-image.png"
+
+export const metadata: Metadata = {
+  title: "Ad Creation",
+  description:
+    "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
+  openGraph: {
+    title: "Ad Creation | PodLab",
+    description:
+      "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
+    url: "https://podlab.com/ads",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "PodLab - Broadcasting Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ad Creation | PodLab",
+    description:
+      "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
+    images: [ogImage],
+    creator: "@podlab",
+  },
+}
 
 const adTypes = [
   { title: "Ad Type 1", description: "Description for Ad Type 1", icon: ArrowRight },
