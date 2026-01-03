@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, TrendingUp, Check, BarChart3, Target, Megaphone, Users } from "lucide-react"
 import type { Metadata } from "next"
-import { getUrl, ogImage } from "@/lib/metadata"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "ExpansionLab",
@@ -12,20 +12,13 @@ export const metadata: Metadata = {
     title: "ExpansionLab | PodLab",
     description: "Fractional CMO support, campaign management, and growth strategy for scaling founders.",
     url: getUrl("/labs/expansion"),
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+
   },
   twitter: {
     card: "summary_large_image",
     title: "ExpansionLab | PodLab",
     description: "Fractional CMO support, campaign management, and growth strategy for scaling founders.",
-    images: [ogImage],
+
     creator: "@podlab",
   },
 }

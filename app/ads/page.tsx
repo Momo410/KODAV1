@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowRight, Target, BarChart3, Check } from "lucide-react"
-import { getUrl, ogImage } from "@/lib/metadata"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Ad Creation",
@@ -14,21 +14,14 @@ export const metadata: Metadata = {
     description:
       "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
     url: getUrl("/ads"),
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+
   },
   twitter: {
     card: "summary_large_image",
     title: "Ad Creation | PodLab",
     description:
       "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
-    images: [ogImage],
+
     creator: "@podlab",
   },
 }
@@ -165,7 +158,7 @@ export default function AdsPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {process.map((step, index) => (
               <div key={index} className="relative p-6 bg-background rounded-xl border border-border">
-                <span className="text-4xl font-bold text-primary/20">{step.step}</span>
+                <span className="text-4xl font-bold text-primary">{step.step}</span>
                 <h3 className="h3 text-foreground mt-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{step.description}</p>
               </div>
@@ -188,9 +181,8 @@ export default function AdsPage() {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`p-8 bg-card rounded-2xl border ${
-                  pkg.popular ? "border-2 border-primary relative" : "border-border"
-                }`}
+                className={`p-8 bg-card rounded-2xl border ${pkg.popular ? "border-2 border-primary relative" : "border-border"
+                  }`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">

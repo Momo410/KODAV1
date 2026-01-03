@@ -262,7 +262,7 @@ export default function GrowthSystemPage() {
                     <div className="flex flex-col lg:flex-row gap-8">
                       {/* Left: Number + Icon */}
                       <div className="flex items-start gap-6 lg:w-64 flex-shrink-0">
-                        <span className="text-5xl font-bold text-primary/20">{lab.number}</span>
+                        <span className="text-5xl font-bold text-primary">{lab.number}</span>
                         <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                           <Icon className="w-8 h-8 text-primary" />
                         </div>

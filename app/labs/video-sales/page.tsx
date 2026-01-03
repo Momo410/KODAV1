@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, PlayCircle, Check, Film, MessageSquare, Users, RefreshCw, Target } from "lucide-react"
 import type { Metadata } from "next"
-import { getUrl, ogImage } from "@/lib/metadata"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "VideoSalesLab",
@@ -12,20 +12,13 @@ export const metadata: Metadata = {
     title: "VideoSalesLab | PodLab",
     description: "Five core sales videos that educate, persuade, and close while you sleep.",
     url: getUrl("/labs/video-sales"),
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+
   },
   twitter: {
     card: "summary_large_image",
     title: "VideoSalesLab | PodLab",
     description: "Five core sales videos that educate, persuade, and close while you sleep.",
-    images: [ogImage],
+
     creator: "@podlab",
   },
 }

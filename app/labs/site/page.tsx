@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Globe, Check, Smartphone, Zap, Search, BarChart3 } from "lucide-react"
 import type { Metadata } from "next"
-import { getUrl, ogImage } from "@/lib/metadata"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "SiteLab",
@@ -12,20 +12,13 @@ export const metadata: Metadata = {
     title: "SiteLab | PodLab",
     description: "Conversion-focused website design built to turn visitors into leads and clients.",
     url: getUrl("/labs/site"),
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+
   },
   twitter: {
     card: "summary_large_image",
     title: "SiteLab | PodLab",
     description: "Conversion-focused website design built to turn visitors into leads and clients.",
-    images: [ogImage],
+
     creator: "@podlab",
   },
 }

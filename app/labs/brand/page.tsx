@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, Palette, Check, Type, Droplet, Layers, FileImage } from "lucide-react"
 import type { Metadata } from "next"
-import { getUrl, ogImage } from "@/lib/metadata"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "BrandLab",
@@ -12,20 +12,13 @@ export const metadata: Metadata = {
     title: "BrandLab | PodLab",
     description: "Visual identity systems that include logo, color, typography, and brand guidelines.",
     url: getUrl("/labs/brand"),
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+
   },
   twitter: {
     card: "summary_large_image",
     title: "BrandLab | PodLab",
     description: "Visual identity systems that include logo, color, typography, and brand guidelines.",
-    images: [ogImage],
+
     creator: "@podlab",
   },
 }

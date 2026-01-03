@@ -232,7 +232,7 @@ export default function EditingPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {process.map((step, index) => (
               <div key={index} className="relative p-6 bg-background rounded-xl border border-border">
-                <span className="text-4xl font-bold text-primary/20">{step.step}</span>
+                <span className="text-4xl font-bold text-primary">{step.step}</span>
                 <h3 className="h3 text-foreground mt-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{step.description}</p>
               </div>
@@ -255,9 +255,8 @@ export default function EditingPage() {
             {pricing.map((tier, index) => (
               <div
                 key={index}
-                className={`p-8 bg-card rounded-2xl border ${
-                  tier.popular ? "border-2 border-primary relative" : "border-border"
-                }`}
+                className={`p-8 bg-card rounded-2xl border ${tier.popular ? "border-2 border-primary relative" : "border-border"
+                  }`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">

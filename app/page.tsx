@@ -10,7 +10,7 @@ import { DifferenceSection } from "@/components/home/difference-section"
 import { FounderStorySection } from "@/components/home/founder-story-section"
 import { FinalCTASection } from "@/components/home/final-cta-section"
 import type { Metadata } from "next"
-import { getUrl, ogImage } from "@/lib/metadata"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: {
@@ -23,21 +23,14 @@ export const metadata: Metadata = {
     description:
       "Premium podcast and video production studio in Las Vegas. Transform your expertise into evergreen content that builds trust and drives sales 24/7.",
     url: getUrl("/"),
-    images: [
-      {
-        url: ogImage,
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+
   },
   twitter: {
     card: "summary_large_image",
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio in Las Vegas. Transform your expertise into evergreen content that builds trust and drives sales 24/7.",
-    images: [ogImage],
+
     creator: "@podlab",
   },
 }
