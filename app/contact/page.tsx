@@ -26,12 +26,67 @@ const services = [
 
 const budgets = ["$1,000 - $5,000", "$5,000 - $10,000", "$10,000 - $25,000", "$25,000+", "Let's Discuss"]
 
+interface FormData {
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  company: string
+  website: string
+  service: string
+  budget: string
+  message: string
+  referral: string
+}
+
 export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [formData, setFormData] = useState<FormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    company: "",
+    website: "",
+    service: "",
+    budget: "",
+    message: "",
+    referral: "",
+  })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (field: keyof FormData, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+    setError(null)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitted(true)
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message")
+      }
+
+      setIsSubmitted(true)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -63,31 +118,65 @@ export default function ContactPage() {
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="h3 text-foreground mb-4">Message Received</h3>
+                  <h3 className="h3 text-foreground mb-4">Thank You!</h3>
                   <p className="body-text text-muted-foreground max-w-md mx-auto">
-                    Thanks for reaching out. We'll review your info and get back to you within 24 hours with next steps.
+                    Your message has been received. We'll get back to you within 24 hours with next steps.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="p-8 bg-background rounded-2xl border border-border space-y-8">
+                  {error && (
+                    <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+                      <p className="text-sm text-red-500">{error}</p>
+                    </div>
+                  )}
                   <div>
                     <h3 className="h3 text-foreground mb-6">Tell us about yourself</h3>
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name *</Label>
-                        <Input id="firstName" placeholder="John" required />
+                        <Input
+                          id="firstName"
+                          placeholder="John"
+                          required
+                          value={formData.firstName}
+                          onChange={(e) => handleChange("firstName", e.target.value)}
+                          disabled={isLoading}
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name *</Label>
-                        <Input id="lastName" placeholder="Smith" required />
+                        <Input
+                          id="lastName"
+                          placeholder="Smith"
+                          required
+                          value={formData.lastName}
+                          onChange={(e) => handleChange("lastName", e.target.value)}
+                          disabled={isLoading}
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email">Email *</Label>
-                        <Input id="email" type="email" placeholder="john@company.com" required />
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="john@company.com"
+                          required
+                          value={formData.email}
+                          onChange={(e) => handleChange("email", e.target.value)}
+                          disabled={isLoading}
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone">Phone</Label>
-                        <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+                        <Input
+                          id="phone"
+                          type="tel"
+                          placeholder="(555) 123-4567"
+                          value={formData.phone}
+                          onChange={(e) => handleChange("phone", e.target.value)}
+                          disabled={isLoading}
+                        />
                       </div>
                     </div>
                   </div>
@@ -97,15 +186,32 @@ export default function ContactPage() {
                     <div className="grid sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="company">Company Name</Label>
-                        <Input id="company" placeholder="Acme Inc." />
+                        <Input
+                          id="company"
+                          placeholder="Acme Inc."
+                          value={formData.company}
+                          onChange={(e) => handleChange("company", e.target.value)}
+                          disabled={isLoading}
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="website">Website</Label>
-                        <Input id="website" placeholder="https://yoursite.com" />
+                        <Input
+                          id="website"
+                          placeholder="https://yoursite.com"
+                          value={formData.website}
+                          onChange={(e) => handleChange("website", e.target.value)}
+                          disabled={isLoading}
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="service">Service Interest *</Label>
-                        <Select required>
+                        <Select
+                          required
+                          value={formData.service}
+                          onValueChange={(value) => handleChange("service", value)}
+                          disabled={isLoading}
+                        >
                           <SelectTrigger>
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
@@ -120,7 +226,11 @@ export default function ContactPage() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="budget">Budget Range</Label>
-                        <Select>
+                        <Select
+                          value={formData.budget}
+                          onValueChange={(value) => handleChange("budget", value)}
+                          disabled={isLoading}
+                        >
                           <SelectTrigger>
                             <SelectValue placeholder="Select budget" />
                           </SelectTrigger>
@@ -143,16 +253,25 @@ export default function ContactPage() {
                       placeholder="What are you looking to achieve? What's your biggest challenge right now with content?"
                       className="min-h-32"
                       required
+                      value={formData.message}
+                      onChange={(e) => handleChange("message", e.target.value)}
+                      disabled={isLoading}
                     />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="referral">How did you hear about us?</Label>
-                    <Input id="referral" placeholder="Referral, social media, search, etc." />
+                    <Input
+                      id="referral"
+                      placeholder="Referral, social media, search, etc."
+                      value={formData.referral}
+                      onChange={(e) => handleChange("referral", e.target.value)}
+                      disabled={isLoading}
+                    />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full">
-                    Submit Inquiry
+                  <button type="submit" className="btn-primary w-full" disabled={isLoading}>
+                    {isLoading ? "Sending..." : "Submit Inquiry"}
                   </button>
 
                   <p className="caption text-muted-foreground text-center">
