@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description:
       "Premium podcast and video production studio in Las Vegas. Transform your expertise into evergreen content that builds trust and drives sales 24/7.",
     url: getUrl("/"),
+    siteName: "PodLab",
     images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab" }],
   },
   twitter: {
