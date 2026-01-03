@@ -46,21 +46,15 @@ export const metadata: Metadata = {
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio. Transform your expertise into evergreen content that sells.",
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+
+
   },
   twitter: {
     card: "summary_large_image",
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio. Transform your expertise into evergreen content that sells.",
-    images: ["/twitter-image.png"],
+
     creator: "@podlab",
   },
   robots: {
