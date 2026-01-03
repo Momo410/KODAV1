@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: "ExpansionLab | PodLab",
     description: "Fractional CMO support, campaign management, and growth strategy for scaling founders.",
     url: getUrl("/labs/expansion"),
-
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab ExpansionLab" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ExpansionLab | PodLab",
     description: "Fractional CMO support, campaign management, and growth strategy for scaling founders.",
-
+    images: [getUrl("/opengraph-image.png")],
     creator: "@podlab",
   },
 }

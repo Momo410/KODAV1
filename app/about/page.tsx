@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import FinalCTA from "@/components/shared/final-cta"
 import type { Metadata } from "next"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,7 +11,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About PodLab",
     description: "Meet the team behind PodLab. Built for founders who refuse to stay small.",
-    url: "https://podlab.com/about",
+    url: getUrl("/about"),
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About PodLab",
+    description: "Meet the team behind PodLab. Built for founders who refuse to stay small.",
+    images: [getUrl("/opengraph-image.png")],
+    creator: "@podlab",
   },
 }
 

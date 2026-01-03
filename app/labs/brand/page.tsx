@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: "BrandLab | PodLab",
     description: "Visual identity systems that include logo, color, typography, and brand guidelines.",
     url: getUrl("/labs/brand"),
-
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab BrandLab" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "BrandLab | PodLab",
     description: "Visual identity systems that include logo, color, typography, and brand guidelines.",
-
+    images: [getUrl("/opengraph-image.png")],
     creator: "@podlab",
   },
 }

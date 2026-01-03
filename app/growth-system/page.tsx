@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowRight, MessageSquare, Palette, Globe, PlayCircle, TrendingUp, CheckCircle2 } from "lucide-react"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Business Growth System",
@@ -12,7 +13,15 @@ export const metadata: Metadata = {
     title: "Business Growth System | PodLab",
     description:
       "Five interconnected Labs that transform founders into industry authorities. Record once. Sell forever.",
-    url: "https://podlab.com/growth-system",
+    url: getUrl("/growth-system"),
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab Growth System" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Business Growth System | PodLab",
+    description: "Five interconnected Labs that transform founders into industry authorities. Record once. Sell forever.",
+    images: [getUrl("/opengraph-image.png")],
+    creator: "@podlab",
   },
 }
 

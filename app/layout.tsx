@@ -46,15 +46,21 @@ export const metadata: Metadata = {
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio. Transform your expertise into evergreen content that sells.",
-
-
+    images: [
+      {
+        url: getUrl("/opengraph-image.png"),
+        width: 1200,
+        height: 630,
+        alt: "PodLab - Premium Podcast and Video Production Studio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "PodLab | Record Once. Sell Forever.",
     description:
       "Premium podcast and video production studio. Transform your expertise into evergreen content that sells.",
-
+    images: [getUrl("/opengraph-image.png")],
     creator: "@podlab",
   },
   robots: {
@@ -85,7 +91,6 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-  generator: 'v0.app'
 }
 
 export const viewport: Viewport = {

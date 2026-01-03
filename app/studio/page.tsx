@@ -1,8 +1,10 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { FAQAccordion } from "@/components/faq-accordion"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowRight, Video, Mic, Monitor, Clock, Check, Camera, Lightbulb, Users } from "lucide-react"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Studio Time",
@@ -11,7 +13,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Studio Time | PodLab",
     description: "Walk in. Record. Walk out with content. Premium studio in Las Vegas.",
-    url: "https://podlab.com/studio",
+    url: getUrl("/studio"),
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab Studio" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio Time | PodLab",
+    description: "Walk in. Record. Walk out with content. Premium studio in Las Vegas.",
+    images: [getUrl("/opengraph-image.png")],
+    creator: "@podlab",
   },
 }
 
@@ -199,9 +209,8 @@ export default function StudioPage() {
             {pricingTiers.map((tier, index) => (
               <div
                 key={index}
-                className={`p-8 bg-card rounded-2xl border ${
-                  tier.popular ? "border-2 border-primary relative" : "border-border"
-                }`}
+                className={`p-8 bg-card rounded-2xl border ${tier.popular ? "border-2 border-primary relative" : "border-border"
+                  }`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
@@ -245,14 +254,7 @@ export default function StudioPage() {
             <h2 className="h2 text-foreground">Common Questions</h2>
           </div>
 
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <div key={index} className="p-6 bg-background rounded-xl border border-border">
-                <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                <p className="body-text text-muted-foreground">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 
@@ -275,6 +277,6 @@ export default function StudioPage() {
       </section>
 
       <Footer />
-    </main>
+    </main >
   )
 }

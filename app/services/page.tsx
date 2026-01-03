@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
 import type { Metadata } from "next"
+import { getUrl } from "@/lib/metadata"
 import {
   ArrowRight,
   Video,
@@ -25,7 +26,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PodLab Services",
     description: "Studio time, unlimited editing, and the complete Business Growth System for $1M-$8M founders.",
-    url: "https://podlab.com/services",
+    url: getUrl("/services"),
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab Services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PodLab Services",
+    description: "Studio time, unlimited editing, and the complete Business Growth System for $1M-$8M founders.",
+    images: [getUrl("/opengraph-image.png")],
+    creator: "@podlab",
   },
 }
 

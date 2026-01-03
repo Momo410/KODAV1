@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: "VideoSalesLab | PodLab",
     description: "Five core sales videos that educate, persuade, and close while you sleep.",
     url: getUrl("/labs/video-sales"),
-
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab VideoSalesLab" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "VideoSalesLab | PodLab",
     description: "Five core sales videos that educate, persuade, and close while you sleep.",
-
+    images: [getUrl("/opengraph-image.png")],
     creator: "@podlab",
   },
 }

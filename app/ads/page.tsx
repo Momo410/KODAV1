@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     description:
       "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
     url: getUrl("/ads"),
-
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab Ads" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ad Creation | PodLab",
     description:
       "Direct response video ads built to stop the scroll and drive action. Strategy, scripting, filming, and editing included.",
-
+    images: [getUrl("/opengraph-image.png")],
     creator: "@podlab",
   },
 }

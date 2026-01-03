@@ -12,20 +12,13 @@ export const metadata: Metadata = {
     title: "AssetsLab | PodLab",
     description: "Messaging, avatar, and positioning foundations that guide your content and offers.",
     url: getUrl("/labs/assets"),
-    images: [
-      {
-        url: "/opengraph-image.png",
-        width: 1200,
-        height: 630,
-        alt: "PodLab - Broadcasting Solutions",
-      },
-    ],
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab AssetsLab" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AssetsLab | PodLab",
     description: "Messaging, avatar, and positioning foundations that guide your content and offers.",
-    images: ["/twitter-image.png"],
+    images: [getUrl("/opengraph-image.png")],
     creator: "@podlab",
   },
 }

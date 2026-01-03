@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     title: "SiteLab | PodLab",
     description: "Conversion-focused website design built to turn visitors into leads and clients.",
     url: getUrl("/labs/site"),
-
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab SiteLab" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "SiteLab | PodLab",
     description: "Conversion-focused website design built to turn visitors into leads and clients.",
-
+    images: [getUrl("/opengraph-image.png")],
     creator: "@podlab",
   },
 }

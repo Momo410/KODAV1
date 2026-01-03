@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Play, Download, Zap, Target, TrendingUp, CheckCircle2, ArrowRight } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Vegas Ad Vault | PodLab",
@@ -11,6 +12,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vegas Ad Vault | PodLab",
     description: "Access our collection of high-converting ad templates and creative frameworks.",
+    url: getUrl("/vegas-ad-vault"),
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "Vegas Ad Vault" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vegas Ad Vault | PodLab",
+    description: "Access our collection of high-converting ad templates and creative frameworks.",
+    images: [getUrl("/opengraph-image.png")],
+    creator: "@podlab",
   },
 }
 

@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import type { Metadata } from "next"
 import { ArrowRight, Scissors, Clock, Repeat, Palette, Zap, Check, Infinity } from "lucide-react"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Unlimited Editing",
@@ -11,7 +12,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Unlimited Editing | PodLab",
     description: "Raw footage in. Scroll-stopping content out. Unlimited video editing for founders.",
-    url: "https://podlab.com/editing",
+    url: getUrl("/editing"),
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab Editing" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Unlimited Editing | PodLab",
+    description: "Raw footage in. Scroll-stopping content out. Unlimited video editing for founders.",
+    images: [getUrl("/opengraph-image.png")],
+    creator: "@podlab",
   },
 }
 

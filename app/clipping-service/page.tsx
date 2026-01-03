@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 import { ArrowRight, Scissors, Clock, Video, Sparkles, Share2, Check, Zap } from "lucide-react"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "Interview Clipping Service | PodLab",
@@ -10,7 +11,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Interview Clipping Service | PodLab",
     description: "Transform hours of content into dozens of scroll-stopping clips. Maximum reach, minimum effort.",
-    url: "https://podlab.com/clipping-service",
+    url: getUrl("/clipping-service"),
+    images: [{ url: getUrl("/opengraph-image.png"), width: 1200, height: 630, alt: "PodLab Clipping Service" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Interview Clipping Service | PodLab",
+    description: "Transform hours of content into dozens of scroll-stopping clips. Maximum reach, minimum effort.",
+    images: [getUrl("/opengraph-image.png")],
+    creator: "@podlab",
   },
 }
 
