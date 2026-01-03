@@ -4,4 +4,4 @@ export const siteUrl =
 
 export const getUrl = (path = "/") => new URL(path, siteUrl).toString()
 
-export const ogImage = getUrl("/og-image.png")
+

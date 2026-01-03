@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowRight, MessageSquare, User, Target, Lightbulb, Check, FileText } from "lucide-react"
 import type { Metadata } from "next"
-import { getUrl, ogImage } from "@/lib/metadata"
+import { getUrl } from "@/lib/metadata"
 
 export const metadata: Metadata = {
   title: "AssetsLab",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: getUrl("/labs/assets"),
     images: [
       {
-        url: ogImage,
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "PodLab - Broadcasting Solutions",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AssetsLab | PodLab",
     description: "Messaging, avatar, and positioning foundations that guide your content and offers.",
-    images: [ogImage],
+    images: ["/twitter-image.png"],
     creator: "@podlab",
   },
 }
@@ -184,7 +184,7 @@ export default function AssetsLabPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {process.map((step, index) => (
               <div key={index} className="p-6 bg-background rounded-xl border border-border">
-                <span className="text-4xl font-bold text-primary/20">{step.step}</span>
+                <span className="text-4xl font-bold text-primary">{step.step}</span>
                 <h3 className="h3 text-foreground mt-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground mt-2">{step.description}</p>
               </div>
